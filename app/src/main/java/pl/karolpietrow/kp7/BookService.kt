@@ -98,8 +98,8 @@ class BookService : Service() {
     }
 
     override fun onDestroy() {
-        super.onDestroy()
         coroutineScope.cancel()
+        super.onDestroy()
     }
 
     private suspend fun getBookOKHttp(id: Int): String = withContext(Dispatchers.IO){
