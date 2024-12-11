@@ -3,7 +3,6 @@ package pl.karolpietrow.kp7
 import android.content.Context.RECEIVER_EXPORTED
 import android.content.Intent
 import android.content.IntentFilter
-import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.widget.Toast
@@ -41,11 +40,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.compose.ui.window.DialogProperties
 import androidx.lifecycle.viewmodel.compose.viewModel
-import kotlinx.coroutines.coroutineScope
 import pl.karolpietrow.kp7.ui.theme.KP7Theme
-import java.io.BufferedReader
 import java.io.File
-import java.io.InputStreamReader
 
 
 class MainActivity : ComponentActivity() {
@@ -235,7 +231,7 @@ fun MainScreen(viewModel: MyViewModel) {
                 }
             },
             title = {
-                Text(text = selectedBook!!.title + " - opis")
+                Text(text = selectedBook!!.title)
             },
             text = {
                 Column(
