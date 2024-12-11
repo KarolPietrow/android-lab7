@@ -101,6 +101,8 @@ fun MainScreen(viewModel: MyViewModel) {
             fontSize = 30.sp,
             fontWeight = FontWeight.Bold
         )
+        Text(text = "Liczba pobranych książek: ${books.count()}",
+        )
         Row(
             modifier = Modifier
                 .fillMaxWidth()
