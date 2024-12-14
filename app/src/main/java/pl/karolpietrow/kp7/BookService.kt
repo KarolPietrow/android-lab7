@@ -32,7 +32,7 @@ class BookService : Service() {
     }
 
     private fun downloadMultiple(minID: Int, maxID: Int) {
-        Toast.makeText(this, "Rozpoczęto pobieranie...", Toast.LENGTH_SHORT).show()
+        Toast.makeText(applicationContext, "Rozpoczęto pobieranie...", Toast.LENGTH_SHORT).show()
 
         coroutineScope.launch {
             try {
