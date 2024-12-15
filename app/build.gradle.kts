@@ -50,8 +50,6 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.lifecycle.viewmodel.compose)
     implementation (libs.okhttp)
-    implementation(libs.androidx.runner)
-    implementation(libs.androidx.espresso.core)
 //    implementation(libs.androidx.lifecycle.runtime.ktx.v260)
 
 
