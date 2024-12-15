@@ -11,6 +11,7 @@ import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import okhttp3.ConnectionSpec
 import okhttp3.OkHttpClient
 import okhttp3.Request
 import java.io.File
@@ -104,7 +105,9 @@ class BookService : Service() {
 
     private suspend fun getBookOKHttp(id: Int): String = withContext(Dispatchers.IO){
         val url = "https://www.gutenberg.org/cache/epub/$id/pg$id.txt"
-        val client = OkHttpClient()
+        val client = OkHttpClient.Builder()
+            .connectionSpecs(listOf(ConnectionSpec.MODERN_TLS, ConnectionSpec.RESTRICTED_TLS))
+            .build()
         val request = Request.Builder()
             .url(url)
             .build()
